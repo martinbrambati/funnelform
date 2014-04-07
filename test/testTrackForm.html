@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>TrackFormTest</title>
+
+	
+	<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-git.css" />
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="http://code.jquery.com/qunit/qunit-git.js"></script>
+	<script src="../track.form.js"></script>
+	
+</head>
+<body>
+	<div id="textTe">
+	<form action="" name="formu" style="display: none;">
+		<input type="text" class="text" id="text1" name="text1">
+	</form>
+	</div>
+	<div id="qunit"></div>
+	<script>
+	//Initialize test
+	var dummyTracker = [];
+	
+	formTracker.formName = document.forms[0].name;
+	formTracker.exclude = ["excluded words 1","excluded words 2"];
+	formTracker.tracker = dummyTracker;
+	
+	//Init tracker
+	formTracker.init();
+	
+	//Fire events
+	//#1
+	$(document).ready(function(){
+
+		//Test
+		test("trackForm basics", function() {
+		$('#text1').blur();
+		deepEqual(dummyTracker[0], ["_trackEvent", document.forms[0].name, "skipped", "text1"]);
+		
+		//#2
+		$('#text1').val("testing");
+		$('#text1').attr("name","text2");
+		$('#text1').blur();
+		deepEqual(dummyTracker[1], ["_trackEvent", document.forms[0].name, "completed", "text2"]);
+		
+		//#3
+		$('#text1').val("excluded words 1");
+		$('#text1').attr("name","text3");
+		$('#text1').blur();
+		deepEqual(dummyTracker[2], ["_trackEvent", document.forms[0].name, "skipped", "text3"]);
+
+		//#3
+		$('#text1').val("excluded words 2");
+		$('#text1').attr("name","text4");
+		$('#text1').blur();
+		deepEqual(dummyTracker[3], ["_trackEvent", document.forms[0].name, "skipped", "text4"]);
+
+		//#4
+		$('#text1').attr("placeholder","test");
+		$('#text1').attr("name","text5");
+		$('#text1').blur();
+		deepEqual(dummyTracker[4], ["_trackEvent", document.forms[0].name, "skipped", "text5"]);
+			
+		});
+	});
+	//End test
+	</script>
+</body>
+</html>
