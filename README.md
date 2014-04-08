@@ -18,9 +18,9 @@ Tech
 
 FunnelForm uses a number of open source projects to work properly:
 
-* [javascript] - The king
-* [QUnit] - The test framework
+* [CofeeScript] - Better scripting
 * [jQuery] - duh 
+* [QUnit] - The test framework
 * [Grunt] - Run forest! 
 
 Installation
@@ -47,11 +47,18 @@ Configuration
 
 ```sh
 
-$(document).ready(function(){
-	formTracker.formName="funnel_form"; //The name of the form
-	formTracker.tracker = _gaq; //The analytic array variable
-	formTracker.init(); //Init, duh
-});
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="../../build/trackform.min.js"></script>
+
+<script>
+
+  $(document).ready(function(){
+    formTracker.formName="funnel_form";
+	  tracker = _gaq;
+		formTracker.init();
+	});
+
+</script>
 
 ```
 
@@ -67,3 +74,4 @@ MIT
 [qunit]:https://qunitjs.com/
 [jQuery]:http://jquery.com
 [Grunt]:http://gruntjs.com/getting-started#working-with-an-existing-grunt-project
+[CofeeScript]:http://coffeescript.org/
