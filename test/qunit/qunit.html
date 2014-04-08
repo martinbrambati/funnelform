@@ -22,12 +22,12 @@
 	//Initialize test
 	var dummyTracker = [];
 	
-	formTracker.formName = document.forms[0].name;
-	formTracker.exclude = ["excluded words 1","excluded words 2"];
-	formTracker.tracker = dummyTracker;
+	this.formTracker.formName = document.forms[0].name;
+	this.formTracker.exclude = ["excluded words 1","excluded words 2"];
+	this.tracker = dummyTracker;
 	
 	//Init tracker
-	formTracker.init();
+	this.formTracker.init();
 	
 	//Fire events
 	//#1

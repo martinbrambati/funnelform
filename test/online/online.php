@@ -7,7 +7,7 @@
 </style>
 <script src="conf.js"></script>
 <script>
-	var _gaq = _gaq || [];
+    	var _gaq = _gaq || [];
 			var _uacct = conf.UA;
 			
 			_gaq.push(['_setAccount', conf.UA]);
@@ -122,11 +122,13 @@ echo "<br>";
 echo $gender;
 ?>
 <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="../../build/trackform.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			formTracker.formName="funnel_form";
-			formTracker.tracker = _gaq;
+<script src="../../build/trackform.min.js"></script>
+
+  <script>
+
+    $(document).ready(function(){
+      formTracker.formName="funnel_form";
+		  tracker = _gaq;
 			formTracker.init();
 		});
 

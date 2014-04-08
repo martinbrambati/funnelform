@@ -1,40 +1,27 @@
-/**
-	JavaScript code to track form interaction via Google Analytic
-	Requires JQuery
-*/
+(function() {
+  var __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-var formTracker = {
+  this.tracker = this.tracker || null;
 
-	'formName': 'FORM NAME',
-	'exclude':['EXCLUDED WORDS','MORE EXCLUDED WORDS'],
-	'tracker':null,
+  this.formTracker = {
+    formName: "FORM NAME",
+    exclude: ["EXCLUDED WORDS", "MORE EXCLUDED WORDS"],
+    init: function() {
+      return $(document).ready(function() {
+        return $(":input").blur(function() {
+          var string;
+          string = $(this).val().toString().replace(/^\s+/g, "");
+          if (string.length > 0 && formTracker.notIn($(this).val())) {
+            return tracker.push(["_trackEvent", formTracker.formName, "completed", $(this).attr("name")]);
+          } else {
+            return tracker.push(["_trackEvent", formTracker.formName, "skipped", $(this).attr("name")]);
+          }
+        });
+      });
+    },
+    notIn: function(valueI) {
+      return !(__indexOf.call(formTracker.exclude, valueI) >= 0);
+    }
+  };
 
-	/*
-	* Initialice
-	*/
-	'init': function() {
-		$(document).ready(function() {
-				$(':input').blur(function() {
-						if ($(this).val().length > 0 && formTracker.notIn($(this).val())) {
-								formTracker.tracker.push(['_trackEvent', formTracker.formName, 'completed', $(this).attr('name')]);
-						} else {
-								formTracker.tracker.push(['_trackEvent', formTracker.formName, 'skipped', $(this).attr('name')]);
-						}
-				});
-		});		
-	},
-
-	/*
-	* Not in list
-	*  
-	*/
-	'notIn':function(valueI){
-		for (var i = formTracker.exclude.length - 1; i >= 0; i--) {
-			if(formTracker.exclude[i]==valueI){
-				return false;
-			}
-		}
-		return true;
-	}
-
-}
+}).call(this);
