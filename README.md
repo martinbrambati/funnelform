@@ -28,7 +28,7 @@ Installation
 
 Contributors (please, please)
 ```sh
-git clone [https://github.com/martinbrambati/funnelform] funnelform
+git clone https://github.com/martinbrambati/funnelform funnelform
 cd funnelform
 npm install
 grunt
@@ -42,6 +42,18 @@ download src version /src/trackform.js
 
 ```
 
+Configuration
+---------------
+
+```sh
+
+$(document).ready(function(){
+	formTracker.formName="funnel_form"; //The name of the form
+	formTracker.tracker = _gaq; //The analytic array variable
+	formTracker.init(); //Init, duh
+});
+
+```
 
 License
 ----
