@@ -3,4 +3,4 @@ node_js:
   - "0.10"
 before_install: npm install -g grunt-cli
 install: npm install & npm install grunt-contrib-coffee & npm install grunt-contrib-uglify & npm install grunt-contrib-qunit	
-before_script: grunt build
+before_script: grunt
