@@ -1,3 +1,4 @@
 var conf = {
-	"UA":""
+	"UA":"UA-XXX",
+	"site":"www.example.com"
 }

@@ -16,9 +16,9 @@ var formTracker = {
 		$(document).ready(function() {
 				$(':input').blur(function() {
 						if ($(this).val().length > 0 && formTracker.notIn($(this).val())) {
-							formTracker.tracker.push(['_trackEvent', formTracker.formName, 'completed', $(this).attr('name')]);
+								formTracker.tracker.push(['_trackEvent', formTracker.formName, 'completed', $(this).attr('name')]);
 						} else {
-							formTracker.tracker.push(['_trackEvent', formTracker.formName, 'skipped', $(this).attr('name')]);
+								formTracker.tracker.push(['_trackEvent', formTracker.formName, 'skipped', $(this).attr('name')]);
 						}
 				});
 		});		
