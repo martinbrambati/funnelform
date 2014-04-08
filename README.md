@@ -1,4 +1,4 @@
-Funnel Form
+Funnel Form  <img src="https://api.travis-ci.org/martinbrambati/funnelform.svg" title="travis ci status">
 =========
 
 A JavaScript helper to track form events via Google Analytic Events.
