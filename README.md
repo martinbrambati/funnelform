@@ -5,7 +5,7 @@ A JavaScript helper to track form events via Google Analytic Events.
 
 This little js file will help you to track wich fields are not completted or passed out by users in your web forms. It tracks 2 Google Analytic Events, one that indicates that the field has been completted and the other if it was ignored:
 
-  - skipped | email |	3 times	
+  - skipped | email |    3 times    
   - completed |    comment	| 2	times
    
 Version
@@ -16,7 +16,7 @@ Version
 Tech
 -----------
 
-Dillinger uses a number of open source projects to work properly:
+FunnelForm uses a number of open source projects to work properly:
 
 * [javascript] - The king
 * [QUnit] - The test framework
@@ -25,21 +25,20 @@ Dillinger uses a number of open source projects to work properly:
 Installation
 --------------
 
+Contributors (please, please)
 ```sh
-git clone [git-repo-url] dillinger
-cd dillinger
-npm i -d
-mkdir -p public/files/{md,html,pdf}
+git clone [https://github.com/martinbrambati/funnelform] funnelform
+cd funnelform
+npm install
+grunt
 ```
 
-##### Configure Plugins. Instructions in following README.md files
-
-* plugins/dropbox/README.md
-* plugins/github/README.md
-* plugins/googledrive/README.md
-
+End user
 ```sh
-node app
+
+download minified version /build/trackform.min.js
+download src version /src/trackform.js
+
 ```
 
 
