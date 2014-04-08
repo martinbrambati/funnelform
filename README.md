@@ -21,6 +21,7 @@ FunnelForm uses a number of open source projects to work properly:
 * [javascript] - The king
 * [QUnit] - The test framework
 * [jQuery] - duh 
+* [Grunt] - Run forest! 
 
 Installation
 --------------
@@ -53,3 +54,4 @@ MIT
 [javascript]:http://en.wikipedia.org/wiki/JavaScript
 [qunit]:https://qunitjs.com/
 [jQuery]:http://jquery.com
+[Grunt]:http://gruntjs.com/getting-started#working-with-an-existing-grunt-project
