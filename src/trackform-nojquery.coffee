@@ -14,7 +14,6 @@ this.formTracker = {
 	blur: ->
 		string=this.value.toString().replace(/^\s+/g, "")
 		if string.length > 0 and formTracker.notIn this.value
-			alert "asda"
 			eval(tracker).push ["_trackEvent", formTracker.formName, "completed", this.name]
 		else
 			eval(tracker).push ["_trackEvent", formTracker.formName, "skipped", this.name]

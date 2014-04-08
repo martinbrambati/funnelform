@@ -21,7 +21,6 @@
       var string;
       string = this.value.toString().replace(/^\s+/g, "");
       if (string.length > 0 && formTracker.notIn(this.value)) {
-        alert("asda");
         return eval(tracker).push(["_trackEvent", formTracker.formName, "completed", this.name]);
       } else {
         return eval(tracker).push(["_trackEvent", formTracker.formName, "skipped", this.name]);
