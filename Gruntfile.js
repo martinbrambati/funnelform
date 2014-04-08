@@ -8,6 +8,7 @@ module.exports = function(grunt) {
       compile: {
         files: {
           'src/trackform.js': 'src/trackform.coffee',
+          'src/trackform-nojquery.js': 'src/trackform-nojquery.coffee',
         }
       },
     },
@@ -18,9 +19,11 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         mangle: false,
       },
-      build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+      my_target: {
+        files: {
+          'build/<%= pkg.name %>.min.js': ['src/<%= pkg.name %>.js'],
+          'build/<%= pkg.name %>-nojquery.min.js': ['src/<%= pkg.name %>-nojquery.js']
+        }
       }
     },
     
