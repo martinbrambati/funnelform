@@ -1,0 +1,25 @@
+{
+  "name": "trackform",
+  "version": "1.0.0",
+  "description": "Tracking forms with google analytic",
+  "main": "track.form.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/martinbrambati/funnelform.git"
+  },
+  "author": "Martin Brambati",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinbrambati/funnelform/issues"
+  },
+  "homepage": "https://github.com/martinbrambati/funnelform",
+  "devDependencies": {
+    "grunt": "^0.4.4"
+  }
+}

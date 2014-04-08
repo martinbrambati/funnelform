@@ -122,7 +122,7 @@ echo "<br>";
 echo $gender;
 ?>
 <script src="http://code.jquery.com/jquery.js"></script>
-<script src="../../track.form.js"></script>
+  <script src="../../build/trackform.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			formTracker.formName="funnel_form";
